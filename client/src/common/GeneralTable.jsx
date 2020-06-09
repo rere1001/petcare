@@ -10,9 +10,8 @@ import DataGrid, {
 
 import ArrayStore from "devextreme/data/array_store";
 import DataSource from "devextreme/data/data_source";
-import { RestConnection } from "../common/RestConnection";
-import { FormPopup } from "../common/FormPopup";
-import { PetForm } from "./PetForm";
+import { RestConnection } from "./RestConnection";
+import { FormPopup } from "./FormPopup";
 
 //TODO: mit console log debuggen
 //TODO: git freigeben (evtl. im OLAT-Forum)
@@ -82,7 +81,7 @@ export const GeneralTable = ({ baseUrl, columns, onGetForm }) => {
 				<GroupPanel visible={true} />
 				<SearchPanel visible={true} highlightCaseSensitive={true} />
 				<Grouping autoExpand={false} />
-				{columns}
+				{columns.props.children}
 				<Column caption={"actions"} type={"buttons"} fixed>
 					<GridButton text={"edit"} onClick={({ row: { data } }) => showPopupWithEntity(data)} />
 					<GridButton

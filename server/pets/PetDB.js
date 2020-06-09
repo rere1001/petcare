@@ -20,15 +20,6 @@ class PetsDB {
 		return result.rows[0];
 	}
 
-	async getPetByName(name) {
-		const result = await this.db.query(
-			"SELECT Id, IdNumber, Species, Race, Name, Birthday, Gender FROM pets WHERE Name = $1",
-			[name]
-		);
-
-		return result.rows[0];
-	}
-
 	async addPet(pets) {
 		const result = await this.db.query(
 			"INSERT INTO pets (IdNumber, Species, Race, Name, Birthday, Gender)" +
