@@ -4,6 +4,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+> docker container ls -a CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES c2afb056cdd3 postgres
+> "docker-entrypoint.s…" 13 days ago Exited (255) 4 days ago 0.0.0.0:5432->5432/tcp pets-postgres
+> 99d00b48644f postgres:latest "docker-entrypoint.s…" 7 months ago Exited (255) 5 months ago
+> 0.0.0.0:5432->5432/tcp marketism-postgres docker start pets-postgres
+
+Markdown
+
 ## Available Scripts
 
 In the project directory, you can run:

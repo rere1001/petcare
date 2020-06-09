@@ -1,0 +1,12 @@
+{
+	"db": {
+		"user": "postgres",
+		"host": "localhost",
+		"database": "pets",
+		"password": "passwort",
+		"port": 5432
+	},
+	"mail": {
+		"fromAddress": "rere1001@stud.hs-kl.de"
+	}
+}
