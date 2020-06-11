@@ -1,20 +1,22 @@
 import express from "express";
 import { Client } from "pg";
 import config from "config";
-import pets from "./pets/PetController.js";
+import { PetController } from "./pets/PetController.js";
+import { UserController } from "./user/UserController.js";
+import { HouseholdController } from "./household/HouseholdController";
+import { CalendarController } from "./calendar/CalendarController";
 import cors from "cors";
 
-const db = new Client(config.get("db"));
+const connection = new Client(config.get("db"));
 
 console.log("Database connecting...");
 
-db.connect()
+connection
+	.connect()
 	.then(() => {
 		console.log("Database connected...");
 
 		const app = express();
-
-		pets.db = db;
 
 		app.use(express.urlencoded({ extended: true }));
 		app.use(express.json());
@@ -23,7 +25,10 @@ db.connect()
 		app.get("/", (req, res) => {
 			res.send({});
 		});
-		app.use(pets.urlPrefix, pets);
+		PetController(app, connection);
+		UserController(app, connection);
+		HouseholdController(app, connection);
+		CalendarController(app, connection);
 
 		app.listen(8080, () => {
 			console.log("Server is listening...");

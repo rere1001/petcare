@@ -70,7 +70,7 @@ export const GeneralTable = ({ baseUrl, columns, onGetForm }) => {
 						widget: "dxButton",
 						options: {
 							icon: "add",
-							tooltip: "Datensatz hinzufügen",
+							tooltip: "Add Entry",
 							onClick: () => showPopupWithEntity({})
 						}
 					});
@@ -94,7 +94,7 @@ export const GeneralTable = ({ baseUrl, columns, onGetForm }) => {
 				</Column>
 			</DataGrid>
 			<FormPopup
-				question="Bearbeiten"
+				question="Edit"
 				onAccept={() => {
 					restConnection.insertOrUpdate(entity).then((entity) => {
 						// Update
@@ -111,13 +111,13 @@ export const GeneralTable = ({ baseUrl, columns, onGetForm }) => {
 				onDecline={() => hidePopups()}
 				visible={popupVisible}
 				height={360}
-				yesLabel={"Speichern"}
-				noLabel={"Abbrechen"}
+				yesLabel={"Save"}
+				noLabel={"Cancel"}
 			>
 				{onGetForm(entity)}
 			</FormPopup>
 			<FormPopup
-				question="Wollen Sie den Datensatz wirklich löschen?"
+				question="Do you want to delete this entry?"
 				onAccept={() => {
 					restConnection.deleteEntity(entity.id).then(() => {
 						deletePetById(entity.id);

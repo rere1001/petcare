@@ -44,8 +44,8 @@ export const FormPopup = ({
 	);
 
 FormPopup.defaultProps = {
-	yesLabel: "Ja",
-	noLabel: "Nein",
+	yesLabel: "Yes",
+	noLabel: "No",
 	children: [],
 	height: 130
 };

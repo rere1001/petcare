@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "app.js",
 	"scripts": {
-		"start": "nodemon start.js",
+		"start": "nodemon --inspect start.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"db-create": "docker run --name pets-postgres -e POSTGRES_PASSWORD=passwort -p 5432:5432 -d postgres",
 		"db-start": "docker start pets-postgres"

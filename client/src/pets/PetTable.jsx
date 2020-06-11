@@ -10,8 +10,9 @@ export const PetTable = () => {
 		<GeneralTable
 			columns={
 				<>
-					<Column dataField="species" groupIndex={0} />
+					<Column dataField="speciesname" caption="Species" groupIndex={0} />
 					<Column dataField="name" dataType="string" />
+					<Column dataField="race" dataType="string" />
 					<Column dataField="birthday" dataType="date" />
 					<Column dataField="idnumber" dataType="string" />
 					<Column dataField="gender" dataType="string" />
