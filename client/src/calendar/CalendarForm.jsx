@@ -1,7 +1,7 @@
 import React from "react";
-import Form, { Label, Item, GroupItem } from "devextreme-react/form";
-import ArrayStore from "devextreme/data/array_store";
+import Form, { Label, Item } from "devextreme-react/form";
 
+// TODO: Discription => Description
 export const CalendarForm = ({ calendar }) => {
 	return (
 		<div>

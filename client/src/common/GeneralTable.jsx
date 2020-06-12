@@ -15,7 +15,7 @@ import { FormPopup } from "./FormPopup";
 
 //TODO: mit console log debuggen
 //TODO: git freigeben (evtl. im OLAT-Forum)
-export const GeneralTable = ({ baseUrl, columns, onGetForm }) => {
+export const GeneralTable = ({ baseUrl, columns, onGetForm, getInsertObject }) => {
 	const [entities, setEntities] = useState(null);
 	const [entity, setEntity] = useState(null);
 	const [popupVisible, setPopupVisible] = useState(false);
@@ -71,7 +71,7 @@ export const GeneralTable = ({ baseUrl, columns, onGetForm }) => {
 						options: {
 							icon: "add",
 							tooltip: "Add Entry",
-							onClick: () => showPopupWithEntity({})
+							onClick: () => showPopupWithEntity(getInsertObject ? getInsertObject() : {})
 						}
 					});
 				}}
