@@ -13,14 +13,23 @@ import DataSource from "devextreme/data/data_source";
 import { RestConnection } from "./RestConnection";
 import { FormPopup } from "./FormPopup";
 
-//TODO: mit console log debuggen
-//TODO: git freigeben (evtl. im OLAT-Forum)
-export const GeneralTable = ({ baseUrl, columns, onGetForm, getInsertObject }) => {
+export const GeneralTable = ({
+	baseUrl,
+	columns,
+	onGetForm,
+	getInsertObject,
+	setAuthenticated,
+	authData
+}) => {
 	const [entities, setEntities] = useState(null);
 	const [entity, setEntity] = useState(null);
 	const [popupVisible, setPopupVisible] = useState(false);
 	const [deletePopupVisible, setDeletePopupVisible] = useState(false);
-	const restConnection = new RestConnection("http://localhost:8080/" + baseUrl);
+	const restConnection = new RestConnection(
+		"http://localhost:8080/" + baseUrl,
+		setAuthenticated,
+		authData
+	);
 
 	const showPopupWithEntity = (entity) => {
 		setEntity({ ...entity });

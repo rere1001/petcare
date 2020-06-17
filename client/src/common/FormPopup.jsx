@@ -34,7 +34,7 @@ export const FormPopup = ({
 			showTitle
 			title={question}
 			width={800}
-			height={height}
+			height={400}
 			onHiding={() => onDecline()}
 		>
 			<div>{children}</div>

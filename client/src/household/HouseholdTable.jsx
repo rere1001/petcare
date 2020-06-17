@@ -3,9 +3,7 @@ import { GeneralTable } from "../common/GeneralTable";
 import { HouseholdForm } from "./HouseholdForm";
 import { Column } from "devextreme-react/data-grid";
 
-//TODO: Column dataField="household" groupIndex={0} eifügen
-
-export const HouseholdTable = () => {
+export const HouseholdTable = ({ setAuthenticated, authData }) => {
 	return (
 		<GeneralTable
 			columns={
@@ -13,6 +11,8 @@ export const HouseholdTable = () => {
 					<Column dataField="name" caption="Name" />
 				</>
 			}
+			setAuthenticated={setAuthenticated}
+			authData={authData}
 			onGetForm={(household) => <HouseholdForm household={household} />}
 			baseUrl="household/"
 		/>

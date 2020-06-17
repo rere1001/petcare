@@ -3,7 +3,7 @@ import { GeneralTable } from "../common/GeneralTable";
 import { IntervalForm } from "./IntervalForm";
 import { Column } from "devextreme-react/data-grid";
 
-export const IntervalTable = () => {
+export const IntervalTable = ({ setAuthenticated, authData }) => {
 	return (
 		<GeneralTable
 			columns={
@@ -28,6 +28,8 @@ export const IntervalTable = () => {
 					/>
 				</>
 			}
+			setAuthenticated={setAuthenticated}
+			authData={authData}
 			onGetForm={(interval) => <IntervalForm interval={interval} />}
 			baseUrl="interval/"
 		/>

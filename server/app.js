@@ -7,6 +7,7 @@ import { HouseholdController } from "./household/HouseholdController";
 import { CalendarController } from "./calendar/CalendarController";
 import { FeedController } from "./feed/FeedController";
 import { IntervalController } from "./interval/IntervalController";
+import UserDB from "./user/UserDB";
 import cors from "cors";
 
 const connection = new Client(config.get("db"));
@@ -23,6 +24,31 @@ connection
 		app.use(express.urlencoded({ extended: true }));
 		app.use(express.json());
 		app.use(cors());
+
+		app.use((req, res, next) => {
+			if (req.path.replace(/^\/|\/$/g, "") !== "user/login") {
+				const b64auth = (req.headers.authorization ?? "").split(" ")[1] ?? "";
+				const [username, password] = Buffer.from(b64auth, "base64").toString().split(":");
+
+				if (username && password) {
+					new UserDB()
+						.loginTestUser(connection, { username, password })
+						.then(({ isValid, household }) => {
+							if (isValid) {
+								req.household = household;
+								next();
+							} else {
+								res.status(401).header("WWW-Authenticate", "Basic realm=Please sign in").send({});
+							}
+						})
+						.catch((error) => res.status(500).send({}));
+				} else {
+					res.header("WWW-Authenticate", "Basic realm=Please sign in").status(401).send({});
+				}
+			} else {
+				next();
+			}
+		});
 
 		app.get("/", (req, res) => {
 			res.send({});

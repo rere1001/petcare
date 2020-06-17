@@ -3,9 +3,7 @@ import { GeneralTable } from "../common/GeneralTable";
 import { PetForm } from "./PetForm";
 import { Column } from "devextreme-react/data-grid";
 
-//TODO: mit console log debuggen
-//TODO: git freigeben (evtl. im OLAT-Forum)
-export const PetTable = () => {
+export const PetTable = ({ setAuthenticated, authData }) => {
 	return (
 		<GeneralTable
 			columns={
@@ -18,6 +16,8 @@ export const PetTable = () => {
 					<Column dataField="gender" dataType="string" />
 				</>
 			}
+			setAuthenticated={setAuthenticated}
+			authData={authData}
 			onGetForm={(pet) => <PetForm pet={pet} />}
 			baseUrl="pets/"
 		/>

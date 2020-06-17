@@ -1,0 +1,20 @@
+.main-menu {
+	background-color: grey;
+}
+
+.main-menu .dx-icon {
+	color: white;
+}
+
+.main-menu .toolbar-label {
+	color: white;
+	font-weight: 500;
+}
+
+.list {
+	width: 200px;
+}
+
+.list .panel-list {
+	height: 400px;
+}

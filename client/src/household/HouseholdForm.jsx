@@ -9,9 +9,6 @@ export const HouseholdForm = ({ household }) => {
 					<Item dataField={"name"} colSpan={2}>
 						<Label text={"Name"} />
 					</Item>
-					<Item dataField={"housecode"}>
-						<Label text={"Housecode"} />
-					</Item>
 				</GroupItem>
 			</Form>
 		</div>

@@ -1,13 +1,12 @@
 import React from "react";
 import Form, { Label, Item } from "devextreme-react/form";
 
-// TODO: Discription => Description
 export const CalendarForm = ({ calendar }) => {
 	return (
 		<div>
 			<Form formData={calendar}>
-				<Item dataField={"discription"}>
-					<Label text={"Discription"} />
+				<Item dataField={"description"}>
+					<Label text={"Description"} />
 				</Item>
 				<Item
 					dataField={"appointment"}

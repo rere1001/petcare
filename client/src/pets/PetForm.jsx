@@ -10,7 +10,23 @@ export const PetForm = ({ pet }) => {
 					<Item dataField={"name"} colSpan={2}>
 						<Label text={"Name"} />
 					</Item>
-					<Item dataField={"species"}>
+					<Item
+						dataField={"species"}
+						editorType={"dxSelectBox"}
+						editorOptions={{
+							dataSource: new ArrayStore({
+								data: [
+									{ id: 1, text: "dog" },
+									{ id: 2, text: "cat" }
+								],
+								key: "id"
+							}),
+							displayExpr: "text",
+							valueExpr: "id",
+							searchEnabled: true,
+							value: pet?.species ?? 1
+						}}
+					>
 						<Label text={"Species"} />
 					</Item>
 					<Item dataField={"race"}>

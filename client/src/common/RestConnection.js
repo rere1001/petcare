@@ -22,7 +22,7 @@ export class RestConnection {
 				"Content-Type": "application/json",
 				Authorization: !this.authData
 					? ""
-					: `Basic ${base64.encode(`${this.authData.email}:${this.authData.password}`)}`
+					: `Basic ${base64.encode(`${this.authData.username}:${this.authData.password}`)}`
 			},
 			body: JSON.stringify(body)
 		})
