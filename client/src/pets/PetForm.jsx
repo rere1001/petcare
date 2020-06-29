@@ -16,8 +16,8 @@ export const PetForm = ({ pet }) => {
 						editorOptions={{
 							dataSource: new ArrayStore({
 								data: [
-									{ id: 1, text: "dog" },
-									{ id: 2, text: "cat" }
+									{ id: 1, text: "Dog" },
+									{ id: 2, text: "Cat" }
 								],
 								key: "id"
 							}),
