@@ -3,7 +3,7 @@ import notify from "devextreme/ui/notify";
 import "./App.css";
 import { PetTable } from "./pets/PetTable";
 import { UserTable } from "./user/UserTable";
-import { HouseholdTable } from "./household/HouseholdTable";
+import { HouseholdView } from "./household/HouseholdView";
 import { CalendarTable } from "./calendar/CalendarTable";
 import { FeedTable } from "./feed/FeedTable";
 import { IntervalTable } from "./interval/IntervalTable";
@@ -12,6 +12,7 @@ import { NavigationHeader } from "./navigation/NavigationHeader";
 import { NavigationBar } from "./navigation/NavigationBar";
 import { UserRestConnection } from "./user/UserRestConnection";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HouseholdForm } from "./household/HouseholdForm";
 
 export const App = ({ baseUrl }) => {
 	const [navigationOpened, setNavigationOpened] = useState(false);
@@ -70,7 +71,7 @@ export const App = ({ baseUrl }) => {
 								/>
 							</Route>
 							<Route path={"/household"}>
-								<HouseholdTable
+								<HouseholdView
 									baseUrl={baseUrl}
 									setAuthenticated={setAuthenticated}
 									authData={authData}

@@ -119,7 +119,7 @@ export const GeneralTable = ({
 				}}
 				onDecline={() => hidePopups()}
 				visible={popupVisible}
-				height={360}
+				height={400}
 				yesLabel={"Save"}
 				noLabel={"Cancel"}
 			>

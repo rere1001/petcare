@@ -1,11 +1,14 @@
 import React from "react";
 import Form, { Label, Item, GroupItem } from "devextreme-react/form";
 
-export const UserForm = ({ user }) => {
+//TODO: Add user administration
+//TODO: Add filter per household for user administration --> all users in household can manage users for this household
+//TODO: Add registration for new users
+export const UserForm = ({ user, formCaption }) => {
 	return (
 		<div>
 			<Form formData={user}>
-				<GroupItem caption={"Baisc Data"} colCount={2}>
+				<GroupItem caption={formCaption} colCount={2}>
 					<Item dataField={"prename"} colSpan={2}>
 						<Label text={"Prename"} />
 					</Item>
@@ -24,4 +27,8 @@ export const UserForm = ({ user }) => {
 			</Form>
 		</div>
 	);
+};
+
+UserForm.defaultProps = {
+	formCaption: "Basic Data"
 };

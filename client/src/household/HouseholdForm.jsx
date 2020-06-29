@@ -1,11 +1,13 @@
 import React from "react";
 import Form, { Label, Item, GroupItem } from "devextreme-react/form";
 
-export const HouseholdForm = ({ household }) => {
+//TODO: Create new household when new user gets registraded
+
+export const HouseholdForm = ({ household, formCaption }) => {
 	return (
 		<div>
 			<Form formData={household}>
-				<GroupItem caption={"Baisc Data"}>
+				<GroupItem caption={formCaption}>
 					<Item dataField={"name"} colSpan={2}>
 						<Label text={"Name"} />
 					</Item>
@@ -13,4 +15,8 @@ export const HouseholdForm = ({ household }) => {
 			</Form>
 		</div>
 	);
+};
+
+HouseholdForm.defaultProps = {
+	formCaption: "Basic Data"
 };

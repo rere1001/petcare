@@ -1,8 +1,10 @@
 export default class HoueholdDB {
 	async list(connection, myHousehold) {
-		const result = await connection.query("SELECT ID, Name FROM household ORDER BY Name");
+		const result = await connection.query("SELECT Id, Name FROM household WHERE Id = $1", [
+			myHousehold
+		]);
 
-		return result.rows;
+		return result.rows[0];
 	}
 
 	async get(connection, myHousehold, id) {

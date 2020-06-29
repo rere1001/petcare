@@ -2,7 +2,7 @@ import React from "react";
 import { Popup } from "devextreme-react/popup";
 import { Button } from "devextreme-react";
 
-const QuestionButton = ({ text, icon, onClick, visible }) => (
+export const QuestionButton = ({ text, icon, onClick, visible }) => (
 	<Button
 		visible={visible}
 		icon={icon}
@@ -33,8 +33,8 @@ export const FormPopup = ({
 			closeOnOutsideClick={false}
 			showTitle
 			title={question}
-			width={800}
-			height={400}
+			width={600}
+			height={height}
 			onHiding={() => onDecline()}
 		>
 			<div>{children}</div>
@@ -47,5 +47,5 @@ FormPopup.defaultProps = {
 	yesLabel: "Yes",
 	noLabel: "No",
 	children: [],
-	height: 130
+	height: 400
 };
