@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import { Drawer, List } from "devextreme-react";
 import "./Navigation.css";
 
-//TODO: set "Pets" as home view
 const NavigationList = ({ history, setNavigationOpened }) => (
 	<div className={"list"}>
 		<List

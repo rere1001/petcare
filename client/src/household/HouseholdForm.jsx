@@ -1,8 +1,6 @@
 import React from "react";
 import Form, { Label, Item, GroupItem } from "devextreme-react/form";
 
-//TODO: Create new household when new user gets registraded
-
 export const HouseholdForm = ({ household, formCaption }) => {
 	return (
 		<div>

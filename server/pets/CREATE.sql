@@ -1,4 +1,3 @@
-/*TODO: um Haushalts-Id erweitern, die wird der Fremdschlüssel*/
 DROP TABLE pets;
 DROP TABLE species;
 

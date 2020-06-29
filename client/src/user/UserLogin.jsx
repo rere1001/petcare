@@ -8,7 +8,6 @@ import { HouseholdForm } from "../household/HouseholdForm";
 import { UserForm } from "../user/UserForm";
 import { RestConnection } from "../common/RestConnection";
 
-//TODO: Add create new user
 export const UserLogin = ({ callback, baseUrl, setAuthenticated, authData }) => {
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
